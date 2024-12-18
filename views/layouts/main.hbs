@@ -1,0 +1,46 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <title>Story Book</title>
+  </head>
+  <body>
+    {{> _header}}
+    {{> _add_btn}}
+    <div class="container">
+      {{{body}}}
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/39.0.0/ckeditor.js" integrity="sha512-xgbYsDxq0nl+JrK7b9PybuTmdxkjNdKkxDpT5rQrV0EjLz/36hbn87M52Z66NUNkXlBo/tDhaSzm9LO8vFPIqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      M.Sidenav.init(document.querySelector('.sidenav'))
+      M.FormSelect.init(document.querySelector('#status'))
+
+      ClassicEditor.create(document.querySelector('#body'))
+        .then(editor => {
+          console.log('Editor initialized:', editor)
+        })
+        .catch(error => {
+          console.error('There was a problem initializing the editor:', error)
+      })
+    </script>
+  </body>
+</html>
